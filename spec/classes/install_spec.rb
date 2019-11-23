@@ -6,6 +6,10 @@ describe 'xfce::install' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile }
+
+      it { is_expected.to contain_package('xfce4').with(ensure: 'present') }
+      it { is_expected.to contain_package('xfce4-goodies').with(ensure: 'present') }
+      it { is_expected.to contain_package('xfce4-terminal').with(ensure: 'present') }
     end
   end
 end
