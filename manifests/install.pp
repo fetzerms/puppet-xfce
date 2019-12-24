@@ -2,11 +2,7 @@
 #
 # @api private
 class xfce::install {
-  $pkgs = [
-    'xfce4',
-    'xfce4-goodies',
-    'xfce4-terminal',
-  ]
+  package { 'xfce4': ensure => 'present'}
 
-  package { $pkgs: ensure => 'present'}
+  ##Add as optionals? 'xfce4-goodies', 'xfce4-terminal',
 }
