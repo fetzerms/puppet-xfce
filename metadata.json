@@ -2,7 +2,7 @@
   "name": "paulwalkeruk-xfce",
   "version": "0.1.0",
   "author": "Paul Walker",
-  "summary": "",
+  "summary": "This module provides simple installation/setup of XFCE",
   "license": "Apache-2.0",
   "source": "",
   "dependencies": [
