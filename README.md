@@ -22,9 +22,11 @@ This module provides a simple setup of XFCE. At the moment, it only installs the
 The following packages will be installed:
 * `xfce4`
 
+The default font of XFCE will be reset to `Cantarell 10`.
+
 ### Beginning with xfce
 
-Since there are currently no parameters, you only need:
+This will install XFCE and set the default font to `Cantarell 10`:
 
 ```puppet
 include xfce
@@ -32,10 +34,17 @@ include xfce
 
 ## Usage
 
-There are currently no parameters, so the only thing you can do is:
+Part of installing this package is setting the default font in XFCE. Setting this default font may require the Display Manager service to be 
+restarted before first use. To avoid having to do this restart, you can set a parameter with the name of the Display Manager service - if 
+that exists in the catalog, then XFCE will be installed _before_ that service. For example, if you are already installing `lightdm` (maybe 
+with the [`paulwalkeruk/lightdm`](https://forge.puppet.com/paulwalkeruk/lightdm) package), then you could specify it like this (note: 
+setting this parameter doesn't install the display manager, you have to do that separately, this parameter simply ensures XFCE is installed 
+first to avoid having to do a restart):
 
 ```puppet
-include xfce
+  class { 'xfce ': 
+    display_manager => 'lightdm',
+  }
 ```
 
 ## Limitations
