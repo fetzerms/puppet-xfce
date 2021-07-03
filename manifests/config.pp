@@ -6,7 +6,6 @@ class xfce::config {
     exec { 'set_font':
       command => 'xfconf-query --channel xsettings --property /Gtk/FontName --set "Cantarell 10"',
       path    => [ '/usr/local/bin/', '/bin/', '/usr/bin/' ],
-      user    => 'vagrant',
       before  => Service[$xfce::display_manager],
     }
   }
@@ -14,7 +13,6 @@ class xfce::config {
     exec { 'set_font':
       command => 'xfconf-query --channel xsettings --property /Gtk/FontName --set "Cantarell 10"',
       path    => [ '/usr/local/bin/', '/bin/', '/usr/bin/' ],
-      user    => 'vagrant',
     }
   }
 }
